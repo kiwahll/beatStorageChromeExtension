@@ -1,0 +1,59 @@
+body {
+    font-family: sans-serif;
+    padding: 16px;
+    background-color: #f9f9f9;
+    width: 280px;
+  }
+  
+  p {
+    margin: 0 0 6px;
+    font-size: 14px;
+  }
+  
+  input#urlInput {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-bottom: 10px;
+  }
+  
+  #saveBtn {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  #saveBtn.success {
+    background-color: #4caf50;
+  }
+  
+  #saveBtn.error {
+    background-color: #f44336;
+  }
+  
+  #saveBtn.warning {
+    background-color: #ff9800;
+  }
+  
+  a button {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  #successText {
+    font-size: 13px;
+    height: 16px;
+    margin: 0 0 10px;
+  }
+  

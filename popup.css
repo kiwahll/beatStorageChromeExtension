@@ -1,0 +1,57 @@
+body {
+    font-family: sans-serif;
+    padding: 16px;
+    background-color: #f9f9f9;
+    width: 280px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  input#title {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+  
+  button {
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  #sendBtn {
+    background-color: #4a90e2;
+    color: white;
+  }
+  
+  #sendBtn.success {
+    background-color: #4caf50;
+  }
+  
+  #sendBtn.error {
+    background-color: #f44336;
+  }
+
+  #sendBtn.warning {
+    background-color: #ff9800;
+  }
+  
+  #settingsBtn {
+    background-color: #e0e0e0;
+    color: #333;
+  }
+  
+  #successText {
+    font-size: 13px;
+    height: 16px;
+    margin: 0;
+  }
+  

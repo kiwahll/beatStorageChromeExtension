@@ -15,28 +15,50 @@ sendBtn.addEventListener("click", async function () {
         try {
             server = items["url"];
         } catch {
-            successText.innerText = "URL in Einstellugen anpassen!";
-            document.body.style.backgroundColor = "#BF9264";
+            error("URL in Einstellungen fehlt!");
             return;
         }
     });
 
     if (titleInput == "" || titleInput == undefined) {
-        successText.innerText = "Titel eingeben!";
-        document.body.style.backgroundColor = "#BF9264";
+        error("Titel eingeben!");
         return;
     }
 
     if (server == undefined) return;
 
-    fetch(`${server}/add/${titleInput.value}/${encodeURIComponent(url)}`)
-        .then(resp => resp.text())
+    fetch(`${server}/add/${titleInput.value.trim()}/${encodeURIComponent(url)}`)
+        .then(resp => {
+            if (!resp.ok) {
+                resp.text().then((data) => warning(data));
+            }
+            return resp.text();
+        })
         .then(data => {
-            successText.innerText = data;
-            document.body.style.backgroundColor = "#BBD8A3";
+            success(data);
         })
         .catch(_ => {
-            successText.innerText = "URL nicht korrekt!";
-            document.body.style.backgroundColor = "#BF9264";
+            error("URL nicht korrekt!");
         });
 });
+
+function error(text) {
+    sendBtn.innerText = text;
+    sendBtn.classList.remove('warning');
+    sendBtn.classList.remove('success');
+    sendBtn.classList.add('error')
+}
+
+function success(text) {
+    sendBtn.innerText = text;
+    sendBtn.classList.remove('warning');
+    sendBtn.classList.remove('error');
+    sendBtn.classList.add('success');
+}
+
+function warning(text) {
+    sendBtn.innerText = text;
+    sendBtn.classList.remove('error');
+    sendBtn.classList.remove('success');
+    sendBtn.classList.add('warning');
+}

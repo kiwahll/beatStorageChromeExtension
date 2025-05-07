@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>Aktuelle URL</title>
+  <meta charset="UTF-8">
+  <title>Popup</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
-
 <body>
+  <div class="container">
     <input type="text" placeholder="Title" id="title">
     <button id="sendBtn">Send</button>
     <p id="successText"></p>
-    <a href="settings.html"><button>Settings</button></a>
-    <script src="popup.js"></script>
-
-    <style>
-        body {
-            background-color: #F0F1C5;
-        }
-    </style>
+    <a href="settings.html" title="Settings">
+      <button id="settingsBtn">
+        ⚙️
+      </button>
+    </a>
+  </div>
+  <script src="popup.js"></script>
 </body>
-
 </html>
